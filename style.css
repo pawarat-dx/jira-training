@@ -3,7 +3,7 @@
     --atlassian-light-blue: #DEEBFF;
     --atlassian-dark: #253858;
     --atlassian-gray: #F4F5F7;
-    --border-radius: 12px;
+    --border-radius: 15px;
 }
 body {
     background: var(--atlassian-gray);

@@ -2,27 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jira Integration Demo</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="https://atlassian.design/static/logo.svg">
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Rainbow Pony Time!</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:400,500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/000000/unicorn.png">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffb347 0%, #ffccff 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255,255,255,0.85);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            padding: 40px 32px 32px 32px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .pony-img {
+            width: 180px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(255, 0, 255, 0.15);
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5em;
+            color: #ff69b4;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 0 #fff176, 4px 4px 0 #b39ddb;
+        }
+        .subtitle {
+            font-size: 1.1em;
+            color: #7c43bd;
+            margin-bottom: 24px;
+        }
+        .time-box {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00bcd4;
+            background: linear-gradient(90deg, #fff176, #ff8a65, #ba68c8, #4fc3f7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-radius: 12px;
+            margin: 16px 0;
+            padding: 10px 0;
+            letter-spacing: 2px;
+        }
+        .footer {
+            margin-top: 24px;
+            font-size: 0.95em;
+            color: #888;
+        }
+        .rainbow-bar {
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <img src="assets/logo.svg" />
-        <br />
-        <br />
-        <div class="tag">Jira-VSCODE Demo work item - "ESP-32" &mdash; EXIM Bank</div>
-        <h1>Hello from Jira!</h1>
+        <div class="rainbow-bar"></div>
+        <img class="pony-img" src="https://static.wikia.nocookie.net/mlp/images/6/6e/Rainbow_Dash_ID_S7E7.png" alt="Rainbow Pony">
+        <h1>Rainbow Pony Time!</h1>
         <div class="subtitle">
-            Atlassian-inspired page for Jira integration demo.<br>
-            Deployed with GitHub Pages & Actions.
+            Welcome to the magical world of ponies and rainbows.<br>
+            Your local time is:
         </div>
+        <div id="local-time" class="time-box">--:--:--</div>
         <div class="footer">
-            &copy; Data Express Company Limited &mdash; For EXIM Bank
+            &copy; 2024 Rainbow Pony Land &mdash; <a href="https://mlp.fandom.com/wiki/Rainbow_Dash" target="_blank" style="color:#ba68c8;text-decoration:none;">Learn more</a>
         </div>
     </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('local-time').textContent = timeString;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
 </body>
-</html>
+</html></div>
